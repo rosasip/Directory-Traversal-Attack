@@ -3,7 +3,7 @@ Directory Traversal Attack Walkthrough
 
 **Scenario:** Hired by the IRS to investigate "Fairly Oddparents Corp." a company suspected of hiding the truth about its earnings. They only publicly released a `general/` folder, but Timmy, Wanda, and Cosmo were suspected of hiding the real reports in their personal folders. My job: use a directory traversal attack to reach those hidden files.
 
-> **First, the part that matters:** I completed this whole thing. I ran a working directory traversal attack, found the hidden files, exposed a falsified financial report, and fixed a broken bash script and a stuck Vim editor along the way. The messy middle below is normal — it's what real troubleshooting looks like.
+> **First, the part that matters:** I completed this whole thing. I ran a working directory traversal attack, found the hidden files, exposed a falsified financial report, and fixed a broken bash script and a stuck Vim editor along the way. The messy middle below is normal, it's what real troubleshooting looks like.
 
 ---
 
