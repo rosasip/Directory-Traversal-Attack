@@ -179,7 +179,7 @@ chmod +x attack.sh   # make it executable (only needed once)
 
 ---
 
-## What directory traversal actually is (in plain English)
+## What directory traversal actually is ?
 
 A web/file server is supposed to serve files only from one folder (here, `general/`). A **directory traversal** attack abuses `../` ("go up one folder") to climb out of that intended folder and reach files elsewhere on the system. It works when the server **doesn't sanitize** the requested path. The damage: confidential files get exposed to people who should never see them.
 
