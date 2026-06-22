@@ -71,7 +71,7 @@ Response:
 ```
 Earnings are down 1600%...
 ```
-**This is the lie.** Public report said *up 900%*; the hidden original says *down 1600%*. (Stretch goal — done.)
+**This is the lie.** Public report said *up 900%*; the hidden original says *down 1600%*. 
 
 **List and read Cosmo's folder:**
 ```bash
@@ -84,7 +84,7 @@ node scripts/attack.js "http://localhost:8888/general/../cosmo/rocknames.txt"   
 
 ## The mistakes I hit (and how I fixed them)
 
-This is the honest part. None of these are "doing it wrong" — they're the normal friction of working in a terminal.
+This is the honest part. None of these are "doing it wrong" they're the normal friction of working in a terminal.
 
 ### Mistake 1 — Broken bash assignment
 The scaffold had:
@@ -105,7 +105,7 @@ While editing, Steps 1 and 2 ended up pasted **twice** (the second copy even had
 I accidentally landed in **Visual Block mode** (`-- VISUAL BLOCK --` at the bottom). My `:q!` got typed *into the file* instead of running as a command, producing junk like `:q!kill -9 $vulnpid`.
 **Fix:**
 1. Press `Esc` two or three times to leave any insert/visual mode.
-2. Type `:q!` — it must appear at the **bottom-left** of the screen, not in the text.
+2. Type `:q!` it must appear at the **bottom-left** of the screen, not in the text.
 3. Press Enter to quit without saving the mess.
 
 **Vim survival cheat sheet:**
@@ -160,9 +160,9 @@ chmod +x attack.sh   # make it executable (only needed once)
 ```
 
 **Why each filled-in line matters:**
-- `node scripts/start-server.js &` — the `&` runs the server in the **background** so the script can keep going. It's required because the next line, `vulnpid=$!`, captures the process ID (`$!`) of the most recent background job so the script can kill it later.
-- `sleep 2` — gives the server a moment to come up before we hit it.
-- `node scripts/attack.js "$ATTACK_PATH"` — runs the attack using the path stored in the variable.
+ `node scripts/start-server.js &` the `&` runs the server in the **background** so the script can keep going. It's required because the next line, `vulnpid=$!`, captures the process ID (`$!`) of the most recent background job so the script can kill it later.
+- `sleep 2` gives the server a moment to come up before we hit it.
+- `node scripts/attack.js "$ATTACK_PATH"` runs the attack using the path stored in the variable.
 
 ---
 
@@ -191,7 +191,7 @@ A web/file server is supposed to serve files only from one folder (here, `genera
 - **Fixes a real app would use:**
   - Sanitize and **canonicalize** the path, then reject anything that resolves outside the intended root.
   - Run the server **jailed** to a directory (chroot / container) so there's nowhere to traverse *to*.
-  - Apply **least privilege** — the server account shouldn't be able to read the personal folders at all.
+  - Apply **least privilege** the server account shouldn't be able to read the personal folders at all.
   - **Detect it:** alert on requests containing `../` or `..%2f` in the path (this is exactly what the `activity.pcapng` task is about).
 
 ---
@@ -213,4 +213,4 @@ A web/file server is supposed to serve files only from one folder (here, `genera
 
 
 
-So Why use a `.sh` file?** Because the attack isn't one command — it's a sequence (start the server in the background → wait → set the target path → run the attack → kill the server). A shell script bundles that whole sequence into one repeatable, executable file, so I run it with a single `./attack.sh` instead of retyping every step, and it lets me store and reuse a variable like `ATTACK_PATH`.
+So Why use a `.sh` file?** Because the attack isn't one command, it's a sequence (start the server in the background → wait → set the target path → run the attack → kill the server). A shell script bundles that whole sequence into one repeatable, executable file, so I run it with a single `./attack.sh` instead of retyping every step, and it lets me store and reuse a variable like `ATTACK_PATH`.
