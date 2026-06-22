@@ -211,8 +211,6 @@ A web/file server is supposed to serve files only from one folder (here, `genera
 
 ---
 
-## Reflection answers
 
-**Q1 — Directory traversal in 3 emojis:** 🔙 🔙 📂 *(the `../ ../` climb back up into folders you shouldn't reach)*
 
-**Q2 — Why use a `.sh` file?** Because the attack isn't one command — it's a sequence (start the server in the background → wait → set the target path → run the attack → kill the server). A shell script bundles that whole sequence into one repeatable, executable file, so I run it with a single `./attack.sh` instead of retyping every step, and it lets me store and reuse a variable like `ATTACK_PATH`.
+So Why use a `.sh` file?** Because the attack isn't one command — it's a sequence (start the server in the background → wait → set the target path → run the attack → kill the server). A shell script bundles that whole sequence into one repeatable, executable file, so I run it with a single `./attack.sh` instead of retyping every step, and it lets me store and reuse a variable like `ATTACK_PATH`.
