@@ -1,4 +1,4 @@
-Directory Traversal Attack: My Lab Journal
+Directory Traversal Attack Walkthrough
 
 
 **Scenario:** Hired by the IRS to investigate "Fairly Oddparents Corp." a company suspected of hiding the truth about its earnings. They only publicly released a `general/` folder, but Timmy, Wanda, and Cosmo were suspected of hiding the real reports in their personal folders. My job: use a directory traversal attack to reach those hidden files.
